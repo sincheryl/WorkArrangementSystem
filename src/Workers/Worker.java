@@ -1,3 +1,5 @@
+package Workers;
+
 import java.util.ArrayList;
 
 public class Worker {
@@ -24,11 +26,10 @@ public class Worker {
     /**
      * The Constructor of this worker
      * @param name
-     * @param timeAvailable
+
      */
-    public Worker(String name, ArrayList<Integer> timeAvailable) {
+    public Worker(String name) {
         this.name = name;
-        TimeAvailable = new ArrayList<>();
     }
 
     public String getName() {
