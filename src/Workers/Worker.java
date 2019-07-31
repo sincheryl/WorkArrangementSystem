@@ -1,6 +1,7 @@
 package Workers;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Worker {
     /**
@@ -63,4 +64,22 @@ public class Worker {
     public void setClose(boolean close) {
         this.close = close;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Worker worker = (Worker) o;
+        return open == worker.open &&
+                close == worker.close &&
+                Objects.equals(name, worker.name) &&
+                Objects.equals(TimeAvailable, worker.TimeAvailable);
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
+
 }
