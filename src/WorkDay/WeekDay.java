@@ -1,34 +1,34 @@
 package WorkDay;
 
-import Workers.Worker;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class WeekDay extends WorkDay{
     /**
-     * The workers that work this day, the key is the work type and time, the value is the the worker.
-     * There are four types of work:
-     *  - K: kitchen
-     *  - S: shake
-     *  - O: order
-     *  - L: long
+     * set the jobs that required on weekdays
      */
-    Map<String, Worker> Arrangement = new HashMap<String, Worker>();
-
+    @Override
+    public void setJobs(){
+        double[] mk = {11,18};
+        double[] m = {12,18};
+        double[] l = {15,21};
+        double[] nc = {18,23.5};
+        double[] n = {18,23};
+        jobs.add(new Job(mk, "K"));
+        jobs.add(new Job(m, "S"));
+        jobs.add(new Job(m, "O"));
+        jobs.add(new Job(l, "L"));
+        jobs.add(new Job(nc,"O"));
+        jobs.add(new Job(nc,"S"));
+        jobs.add(new Job(n, "K"));
+    }
 
     /**
-     *
+     * Not completed yet
      */
     @Override
     public void setWorkers() {
-        Arrangement.put("11-18K", null);
-        Arrangement.put("12-18S", null);
-        Arrangement.put("12-18O", null);
-        Arrangement.put("15-21L", null);
-        Arrangement.put("18-23.5O", null);
-        Arrangement.put("18-23.5S", null);
-        Arrangement.put("18-23K", null);
+        for (Job j:jobs){
+            Arrangement.put(j, null);
+        }
     }
 }
