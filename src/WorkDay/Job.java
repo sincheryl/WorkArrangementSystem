@@ -3,7 +3,7 @@ package WorkDay;
 
 public class Job {
     /**
-     * The time of ths WorkDay.Job
+     * The time of ths WorkDay.
      */
     private double[] Time;
 
@@ -16,13 +16,13 @@ public class Job {
      */
     private String Type;
 
-    public Job(double[] time, String type) {
+    Job(double[] time, String type) {
         Time = time;
         Type = type;
     }
 
     @Override
     public String toString(){
-        return String.format("%d"+"-"+"%f"+"%s", Time[0], Time[1], this.Type);
+        return String.format("%f"+"-"+"%f"+"%s", Time[0], Time[1], this.Type);
     }
 }

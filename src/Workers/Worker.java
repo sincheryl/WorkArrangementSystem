@@ -27,9 +27,8 @@ public class Worker {
     /**
      * The Constructor of this worker
      * @param name
-
      */
-    public Worker(String name) {
+    Worker(String name) {
         this.name = name;
     }
 
