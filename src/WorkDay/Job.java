@@ -3,9 +3,14 @@ package WorkDay;
 
 public class Job {
     /**
-     * The time of ths WorkDay.
+     * The initial time of ths job.
      */
-    private double[] Time;
+    private int ini;
+
+    /**
+     * The end time of this job.
+     */
+    private int end;
 
     /**
      * The type of this job
@@ -16,13 +21,38 @@ public class Job {
      */
     private String Type;
 
-    Job(double[] time, String type) {
-        Time = time;
+    public Job(int ini, int end, String type) {
+        this.ini = ini;
+        this.end = end;
+        Type = type;
+    }
+
+    public double getIni() {
+        return ini;
+    }
+
+    public void setIni(int ini) {
+        this.ini = ini;
+    }
+
+    public double getEnd() {
+        return end;
+    }
+
+    public void setEnd(int end) {
+        this.end = end;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String type) {
         Type = type;
     }
 
     @Override
     public String toString(){
-        return String.format("%f"+"-"+"%f"+"%s", Time[0], Time[1], this.Type);
+        return String.format("%i"+"-"+"%i"+"%s", ini, end, this.Type);
     }
 }

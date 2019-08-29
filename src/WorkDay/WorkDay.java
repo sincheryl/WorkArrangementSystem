@@ -8,6 +8,16 @@ import java.util.Map;
 
 public abstract class WorkDay {
     /**
+     * Which day of this workday
+     */
+    private  String DayofWeek;
+
+    /**
+     * The date of this workday
+     */
+    private String date;
+
+    /**
      * The list of works that work this day, sorted in chronological order.
      */
     private ArrayList<Worker> workers;
@@ -15,24 +25,34 @@ public abstract class WorkDay {
     /**
      * The jobs that this work day requires.
      */
-     ArrayList<Job> jobs;
+     private ArrayList<Job> jobs;
 
     /**
      * The workers that work this day, the key is the work type and time, the value is the the worker.
      */
      Map<Job, Worker> Arrangement = new HashMap<Job, Worker>();
 
-    /**
-     * The method to set the workers for the work day.
-     */
-    abstract public void setWorkers();
 
-    abstract public void setJobs();
+    public void addJobs(int ini, int end, String type) {
+        jobs.add(new Job(ini, end, type));
+    }
 
     public ArrayList<Worker> getWorkers() {
         return workers;
     }
 
+    /**
+     * set the jobs that required on weekdays from Mon to
+     */
+    abstract void setJobs();
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
 
 

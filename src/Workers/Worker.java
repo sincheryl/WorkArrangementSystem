@@ -10,7 +10,7 @@ public class Worker {
     private String name;
 
     /**
-     * The time that the worker is availiable for work.
+     * The time that the worker is available for work.
      */
     private ArrayList<Integer> TimeAvailable;
 
