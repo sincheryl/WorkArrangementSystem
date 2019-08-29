@@ -1,6 +1,6 @@
 This program is designed to help arrange the work at a bubble tea shop.
 
-The final goal is that the chief of the store input the available time of every worker, 
+The final goal is that the manager of the store input the available time of every worker, 
 and generate the arrangement table randomly with following specifications:
 1. There are two kinds of workers: full-time (F) and part-time (P). F workers should work at least 5 days per week, P 
   workers should work at least 3 days per week.
@@ -137,5 +137,5 @@ and generate the arrangement table randomly with following specifications:
     </table>
 
 8. Try to avoid that the work who closes the store and then open the store on the next day.
-9. 
+9. .........
 
