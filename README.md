@@ -16,6 +16,7 @@ and generate the arrangement table randomly with following specifications:
 6. Every night there should be one worker who can check out, and one who can close the store. They need half an hour to do cleaning after the store is closed. The worker who checks out, their time on the arrangement table should be red.
 
 7. The types of works that required is as follows:
+
     1.For weekdays from Mon to Thu:
 
     <table>
