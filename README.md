@@ -1,5 +1,7 @@
 This program is designed to help arrange the work at a bubble tea shop.
 
+Discord: https://discord.gg/Vvsfada
+
 The final goal is that the manager of the store input the available time of every worker, 
 and generate the arrangement table randomly with following specifications:
 1. There are two kinds of workers: full-time (F) and part-time (P). F workers should work at least 5 days per week, P 
