@@ -1,26 +1,32 @@
 package WorkDay;
 
 import Workers.Worker;
+import Workers.WorkerManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class WorkDay {
-    /**
+    /*
      * Which day of this workday
      */
-    private  String DayofWeek;
+    String DayofWeek;
 
-    /**
+    /*
      * The date of this workday
      */
-    private String date;
+    String date;
 
-    /**
+    /*
+     * The manager of this store. This is not a real person, just a tool  to deal with workers.
+     */
+    WorkerManager manager;
+
+    /*
      * The list of works that work this day, sorted in chronological order.
      */
-    private ArrayList<Worker> workers;
+    private ArrayList<Worker> workersToday;
 
     /**
      * The jobs that this work day requires.
@@ -38,13 +44,18 @@ public abstract class WorkDay {
     }
 
     public ArrayList<Worker> getWorkers() {
-        return workers;
+        return workersToday;
     }
 
     /**
      * set the jobs that required on weekdays from Mon to
      */
     abstract void setJobs();
+
+    /**
+     * Get workers that available for today
+     */
+    abstract void collectWorkers();
 
     public String getDate() {
         return date;

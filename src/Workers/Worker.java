@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Worker {
-    /**
+    /*
      * The name of this worker
      */
     private String name;
 
-    /**
+    /*
      * The time that the worker is available for work.
      */
-    private ArrayList<Integer> TimeAvailable;
+    private int[][] TimeAvailable;
 
-    /**
+    /*
      * Whether this worker can open.
      */
     private boolean open;
 
-    /**
+    /*
      * Whether this worker can close.
      */
     private boolean close;
@@ -32,20 +32,20 @@ public class Worker {
         this.name = name;
     }
 
+    public int[][] getTimeAvailable() {
+        return TimeAvailable;
+    }
+
+    public void setTimeAvailable(int[][] timeAvailable) {
+        TimeAvailable = timeAvailable;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ArrayList<Integer> getTimeAvailable() {
-        return TimeAvailable;
-    }
-
-    public void setTimeAvailable(ArrayList<Integer> timeAvailable) {
-        TimeAvailable = timeAvailable;
     }
 
     public boolean isOpen() {

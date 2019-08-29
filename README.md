@@ -138,5 +138,6 @@ and generate the arrangement table randomly with following specifications:
     </table>
 
 8. Try to avoid that the work who closes the store and then open the store on the next day.
-9. .........
+9. The works should be saved locally so that the manager does not have to add all the workers again next time he/she use 
+this software.
 

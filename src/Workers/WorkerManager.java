@@ -8,6 +8,14 @@ public class WorkerManager {
      */
     private ArrayList<Worker> WorkerList;
 
+    public ArrayList<Worker> getWorkerList() {
+        return WorkerList;
+    }
+
+    public void setWorkerList(ArrayList<Worker> workerList) {
+        WorkerList = workerList;
+    }
+
     /**
      * The Constructor of Workers.WorkerManager
      */

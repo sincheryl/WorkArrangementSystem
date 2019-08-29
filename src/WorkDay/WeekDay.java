@@ -1,6 +1,8 @@
 package WorkDay;
 
 
+import Workers.Worker;
+import java.util.ArrayList;
 
 public class WeekDay extends WorkDay{
     /**
@@ -14,6 +16,20 @@ public class WeekDay extends WorkDay{
         this.addJobs(18, 23, "K");
         this.addJobs(18, 23, "S");
         this.addJobs(18, 23, "O");
+    }
+
+    /**
+     * Get workers that available for today. NOT COMPLETE
+     */
+    public void collectWorkers(){
+        ArrayList<Worker> all = manager.getWorkerList();
+        if (DayofWeek.equals("Mon")){
+            for (Worker w : all){
+
+
+            }
+        }
+
     }
 
 
