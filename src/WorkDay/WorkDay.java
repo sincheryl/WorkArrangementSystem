@@ -25,13 +25,14 @@ public abstract class WorkDay {
 
     /*
      * The list of works that work this day, sorted in chronological order.
+     * THe first worker of thus list opens
      */
-    private ArrayList<Worker> workersToday;
+    ArrayList<Worker> workersToday;
 
     /**
      * The jobs that this work day requires.
      */
-     private ArrayList<Job> jobs;
+     ArrayList<Job> jobs;
 
     /**
      * The workers that work this day, the key is the work type and time, the value is the the worker.
@@ -39,7 +40,7 @@ public abstract class WorkDay {
      Map<Job, Worker> Arrangement = new HashMap<Job, Worker>();
 
 
-    public void addJobs(int ini, int end, String type) {
+    void addJobs(int ini, int end, String type) {
         jobs.add(new Job(ini, end, type));
     }
 

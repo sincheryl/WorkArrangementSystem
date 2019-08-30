@@ -1,6 +1,7 @@
 package Workers;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class WorkerManager {
     /**
@@ -8,7 +9,12 @@ public class WorkerManager {
      */
     private ArrayList<Worker> WorkerList;
 
+    /**
+     * All workers should be randomly sorted in case that one worker do a same type of job too much times.
+     * @return WorkerList
+     */
     public ArrayList<Worker> getWorkerList() {
+        Collections.shuffle(WorkerList);
         return WorkerList;
     }
 
@@ -40,11 +46,10 @@ public class WorkerManager {
         }
         if (!names.contains(name)){
             System.out.printf("We do not have a worker called %s", name);
-            return;
         }
         else {
             for (Worker worker : WorkerList){
-                if (name == worker.getName()){
+                if (name.equals(worker.getName())){
                     WorkerList.remove(worker);
                 }
             }
