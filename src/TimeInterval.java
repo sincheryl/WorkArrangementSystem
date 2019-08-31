@@ -1,25 +1,26 @@
 public class TimeInterval {
 
-    private int start, end;
+    // Decided to use string instead of int to avoid the cases when a time instant starts with 0's, e.g. 0930 -> 930
+    private String start, end;
 
-    public TimeInterval(int start, int end) {
+    public TimeInterval(String start, String end) {
         this.start = start;
         this.end = end;
     }
 
-    public int getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(int start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public int getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(int end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 
@@ -27,11 +28,11 @@ public class TimeInterval {
      * This method determines if the a time interval is the sub interval of another
      * @param intervalA a TimeInterval (available time of a worker)
      * @param intervalB another TimeInterval (job time interval)
-     * @return true if intervalA is a sub interval of intervalB, false otherwise
+     * @return true if intervalB is a sub interval of intervalA, false otherwise
      */
     public static Boolean compareIntervals(TimeInterval intervalA, TimeInterval intervalB) {
-            return (intervalA.getStart() <= intervalB.getStart()
-                    && intervalA.getEnd() >= intervalB.getEnd());
+            return (Integer.parseInt(intervalA.getStart()) <= Integer.parseInt(intervalB.getStart())
+                    && Integer.parseInt(intervalA.getEnd()) >= Integer.parseInt(intervalB.getEnd()));
     }
 
 
@@ -43,8 +44,8 @@ public class TimeInterval {
      * @param time a time instant
      * @return the hour component of time
      */
-    private int getHour(int time) {
-        return Integer.parseInt(String.valueOf(time).substring(0,2));
+    private int getHourComponent(String time) {
+        return Integer.parseInt(time.substring(0,2));
     }
 
     /**
@@ -52,8 +53,8 @@ public class TimeInterval {
      * @param time a time instant
      * @return the minute component of time
      */
-    private int getMinute(int time) {
-        return Integer.parseInt(String.valueOf(time).substring(2));
+    private int getMinuteComponent(String time) {
+        return Integer.parseInt(time.substring(2));
     }
 
 
@@ -62,7 +63,7 @@ public class TimeInterval {
      * @return true if the time interval is valid, false otherwise
      */
     public boolean validate() {
-        return validateHelper(start) && validateHelper(end) && (start <= end);
+        return validateHelper(start) && validateHelper(end) && (Integer.parseInt(start) <= Integer.parseInt(end));
     }
 
     /**
@@ -70,9 +71,10 @@ public class TimeInterval {
      * @param time time instants to be validated
      * @return true if time is a valid time instant, false otherwise
      */
-    private boolean validateHelper(int time) {
-        int minute = getMinute(time);
-        return (time >= 0 && time <= 2400 && minute >= 0 && minute <= 59);
+    private boolean validateHelper(String time) {
+        int minute = getMinuteComponent(time);
+        int hour = getHourComponent(time);
+        return (hour >= 0 && hour <= 24 && minute >= 0 && minute <= 59);
     }
 
     /**
@@ -81,8 +83,8 @@ public class TimeInterval {
      *          and the second as the number of minutes
      */
     public int[] calculateLength() {
-        int minutes = getMinute(end) - getMinute(start);
-        int hours = getHour(end) - getHour(start);
+        int minutes = getMinuteComponent(end) - getMinuteComponent(start);
+        int hours = getHourComponent(end) - getHourComponent(start);
         if (minutes < 0) {
             return new int[]{hours-1, minutes+60};
         }
