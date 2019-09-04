@@ -1,6 +1,6 @@
-package Workers;
+package System.Workers;
 
-import java.util.ArrayList;
+import System.TimeInterval;
 import java.util.Objects;
 
 public class Worker {
@@ -12,7 +12,7 @@ public class Worker {
     /*
      * The time that the worker is available for work.
      */
-    private int[][] TimeAvailable;
+    private TimeInterval[] TimeAvailable;
 
     /*
      * Whether this worker can open.
@@ -30,14 +30,6 @@ public class Worker {
      */
     Worker(String name) {
         this.name = name;
-    }
-
-    public int[][] getTimeAvailable() {
-        return TimeAvailable;
-    }
-
-    public void setTimeAvailable(int[][] timeAvailable) {
-        TimeAvailable = timeAvailable;
     }
 
     public String getName() {

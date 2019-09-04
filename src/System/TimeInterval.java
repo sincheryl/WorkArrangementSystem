@@ -1,3 +1,5 @@
+package System;
+
 public class TimeInterval {
 
     // Decided to use string instead of int to avoid the cases when a time instant starts with 0's, e.g. 0930 -> 930
@@ -26,8 +28,8 @@ public class TimeInterval {
 
     /**
      * This method determines if the a time interval is the sub interval of another
-     * @param intervalA a TimeInterval (available time of a worker)
-     * @param intervalB another TimeInterval (job time interval)
+     * @param intervalA a System.TimeInterval (available time of a worker)
+     * @param intervalB another System.TimeInterval (job time interval)
      * @return true if intervalB is a sub interval of intervalA, false otherwise
      */
     public static Boolean compareIntervals(TimeInterval intervalA, TimeInterval intervalB) {

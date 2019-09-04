@@ -1,7 +1,7 @@
-package WorkDay;
+package System.WorkDay;
 
-import Workers.Worker;
-import Workers.WorkerManager;
+import System.Workers.Worker;
+import System.Workers.WorkerManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,16 +32,16 @@ public abstract class WorkDay {
     /**
      * The jobs that this work day requires.
      */
-     ArrayList<Job> jobs;
+     ArrayList<Position> positions;
 
     /**
      * The workers that work this day, the key is the work type and time, the value is the the worker.
      */
-     Map<Job, Worker> Arrangement = new HashMap<Job, Worker>();
+     Map<Position, Worker> Arrangement = new HashMap<Position, Worker>();
 
 
     void addJobs(int ini, int end, String type) {
-        jobs.add(new Job(ini, end, type));
+        positions.add(new Position(ini, end, type));
     }
 
     public ArrayList<Worker> getWorkers() {

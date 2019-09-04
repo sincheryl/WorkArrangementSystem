@@ -1,8 +1,5 @@
-package WorkDay;
+package System.WorkDay;
 
-
-import Workers.Worker;
-import java.util.ArrayList;
 
 public abstract class WeekDay extends WorkDay{
     /**

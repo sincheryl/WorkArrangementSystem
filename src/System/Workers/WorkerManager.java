@@ -1,5 +1,6 @@
-package Workers;
+package System.Workers;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -23,7 +24,7 @@ public class WorkerManager {
     }
 
     /**
-     * The Constructor of Workers.WorkerManager
+     * The Constructor of System.Workers.WorkerManager
      */
     public WorkerManager(ArrayList<Worker> workerList) {
         WorkerList = new ArrayList<>();
@@ -56,6 +57,15 @@ public class WorkerManager {
         }
 
     }
+
+    /**
+     * the method to get the available workers on the i-th of the week.
+     * @param i indicates which day of the week
+     * @return A collection of workers available on the i-th day of this week.
+     */
+    //public ArrayList<Worker> getAvaWorker(int i){
+    //
+    //}
 
 
 }

@@ -1,4 +1,4 @@
-import WorkDay.WeekDay;
+package System;
 
 public class WorkTable {
 
