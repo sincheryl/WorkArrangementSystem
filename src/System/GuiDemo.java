@@ -27,7 +27,7 @@ import java.util.logging.*;
 
 public class GuiDemo extends Application{
 
-    Button button;
+    Button addEmployeeButton, deleteEmployeeButton, setTimeButton;
 
     public static void main(String[] args){
         launch(args);
@@ -35,13 +35,27 @@ public class GuiDemo extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        /*------------------------------------------------------------------------------------*/
+        //set main scene
+
         primaryStage.setTitle("Work Arrangement System");
 
-        StackPane layout = new StackPane();
+        addEmployeeButton = new Button();
+        addEmployeeButton.setText("Add New Employee");
+        deleteEmployeeButton = new Button();
+        deleteEmployeeButton.setText("Delete Employee");
+        setTimeButton = new Button();
+        setTimeButton.setText("Set Time");
 
-        Scene scene = new Scene(layout,500, 500);
+        VBox mainWindow = new VBox(20);
+        mainWindow.getChildren().addAll(addEmployeeButton, deleteEmployeeButton, setTimeButton);
+        mainWindow.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(mainWindow,500, 500);
         primaryStage.setScene(scene);
         primaryStage.show();
+        /*------------------------------------------------------------------------------------*/
 
     }
 }
