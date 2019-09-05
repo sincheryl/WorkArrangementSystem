@@ -20,6 +20,9 @@ public class Position {
         Type = type;
     }
 
+    public Position(int ini, int end, String type) {
+    }
+
 
     public String getType() {
         return Type;

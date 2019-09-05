@@ -1,4 +1,4 @@
 package System.WorkDay;
 
-public class Saturday extends WorkDay {
+public abstract class Saturday extends WorkDay {
 }
