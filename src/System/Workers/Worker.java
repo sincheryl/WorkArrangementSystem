@@ -12,7 +12,7 @@ public class Worker {
     /*
      * The time that the worker is available for work.
      */
-    private TimeInterval[] TimeAvailable;
+    private TimeInterval[] TimeAvailable = new TimeInterval[7];
 
     /*
      * Whether this worker can open.

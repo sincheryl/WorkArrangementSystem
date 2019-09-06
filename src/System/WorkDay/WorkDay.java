@@ -1,5 +1,6 @@
 package System.WorkDay;
 
+import System.Position.Position;
 import System.Workers.Worker;
 import System.Workers.WorkerManager;
 

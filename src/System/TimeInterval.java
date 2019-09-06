@@ -30,7 +30,7 @@ public class TimeInterval {
      * This method determines if the a time interval is the sub interval of another
      * @param intervalA a System.TimeInterval (available time of a worker)
      * @param intervalB another System.TimeInterval (job time interval)
-     * @return true if intervalB is a sub interval of intervalA, false otherwise
+     * @return true if int ervalB is a sub interval of intervalA, false otherwise
      */
     public static Boolean compareIntervals(TimeInterval intervalA, TimeInterval intervalB) {
             return (Integer.parseInt(intervalA.getStart()) <= Integer.parseInt(intervalB.getStart())
