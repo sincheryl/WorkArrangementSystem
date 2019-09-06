@@ -15,6 +15,18 @@ public class Worker {
     private TimeInterval[] TimeAvailable = new TimeInterval[7];
 
     /*
+     * The number of days this worker worked this week.
+     */
+    private int DaysWorked;
+
+    /*
+     * The type of this worker, full time is "F" adn part time is "P"
+     * F workers should work at least 5 days per week
+     * P workers should work at least 3 days per week
+     */
+    private String type;
+
+    /*
      * Whether this worker can open.
      */
     private boolean open;
@@ -23,6 +35,11 @@ public class Worker {
      * Whether this worker can close.
      */
     private boolean close;
+
+    /*
+     * Whether this worker can checkout.
+     */
+    private boolean checkout;
 
     /**
      * The Constructor of this worker
@@ -38,6 +55,30 @@ public class Worker {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public TimeInterval[] getTimeAvailable() {
+        return TimeAvailable;
+    }
+
+    public void setTimeAvailable(TimeInterval[] timeAvailable) {
+        TimeAvailable = timeAvailable;
+    }
+
+    public int getDaysWorked() {
+        return DaysWorked;
+    }
+
+    public void setDaysWorked(int daysWorked) {
+        DaysWorked = daysWorked;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public boolean isOpen() {
@@ -56,6 +97,14 @@ public class Worker {
         this.close = close;
     }
 
+    public boolean isCheckout() {
+        return checkout;
+    }
+
+    public void setCheckout(boolean checkout) {
+        this.checkout = checkout;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -71,6 +120,4 @@ public class Worker {
     public String toString() {
         return this.name;
     }
-
-
 }

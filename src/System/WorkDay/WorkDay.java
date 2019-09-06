@@ -2,13 +2,12 @@ package System.WorkDay;
 
 import System.Position.Position;
 import System.Workers.Worker;
-import System.Workers.WorkerManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class WorkDay {
+public class WorkDay {
     /*
      * Which day of this workday
      */
@@ -19,10 +18,6 @@ public abstract class WorkDay {
      */
     String date;
 
-    /*
-     * The manager of this store. This is not a real person, just a tool  to deal with workers.
-     */
-    WorkerManager manager;
 
     /*
      * The list of works that work this day, sorted in chronological order.
@@ -33,31 +28,28 @@ public abstract class WorkDay {
     /**
      * The jobs that this work day requires.
      */
-     ArrayList<Position> positions;
+    ArrayList<Position> positions;
 
     /**
      * The workers that work this day, the key is the work type and time, the value is the the worker.
      */
-     Map<Position, Worker> Arrangement = new HashMap<Position, Worker>();
+    Map<Position, Worker> Arrangement = new HashMap<Position, Worker>();
 
-
-    void addJobs(int ini, int end, String type) {
-        positions.add(new Position(ini, end, type));
-    }
-
-    public ArrayList<Worker> getWorkers() {
-        return workersToday;
-    }
 
     /**
-     * set the jobs that required on weekdays from Mon to
+     * The method to add positions to this work day.
      */
-    abstract void setJobs();
+    public void addPosition(Position p) {
+        this.positions.add(p);
+    }
 
-    /**
-     * Get workers that available for today
-     */
-    abstract void collectWorkers();
+    public String getDayofWeek() {
+        return DayofWeek;
+    }
+
+    public void setDayofWeek(String dayofWeek) {
+        DayofWeek = dayofWeek;
+    }
 
     public String getDate() {
         return date;
@@ -65,6 +57,30 @@ public abstract class WorkDay {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public ArrayList<Worker> getWorkersToday() {
+        return workersToday;
+    }
+
+    public void setWorkersToday(ArrayList<Worker> workersToday) {
+        this.workersToday = workersToday;
+    }
+
+    public ArrayList<Position> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(ArrayList<Position> positions) {
+        this.positions = positions;
+    }
+
+    public Map<Position, Worker> getArrangement() {
+        return Arrangement;
+    }
+
+    public void setArrangement(Map<Position, Worker> arrangement) {
+        Arrangement = arrangement;
     }
 }
 
