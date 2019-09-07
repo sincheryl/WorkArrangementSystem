@@ -76,6 +76,9 @@ public class WorkDay {
         return Arrangement;
     }
 
+    public void setArrangement(Map<Position, Worker> arrangement) {
+        Arrangement = arrangement;
+    }
 
 }
 
