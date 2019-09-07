@@ -1,23 +1,11 @@
-package System;
+package ArrangeSystem;
 
 import javafx.application.Application;
-import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
-import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
-import java.util.logging.*;
 
 /**
  * Some codes were adapted from the YouTube JavaFX teaching video by thenewboston;
@@ -40,7 +28,7 @@ public class GuiDemo extends Application{
         /*------------------------------------------------------------------------------------*/
         //set main scene
 
-        primaryStage.setTitle("Work Arrangement System");
+        primaryStage.setTitle("Work Arrangement ArrangeSystem");
 
         Button addEmployeeButton = new Button();
         addEmployeeButton.setText("Add New Employee");

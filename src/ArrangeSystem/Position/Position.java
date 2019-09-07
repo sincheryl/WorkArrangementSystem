@@ -1,6 +1,6 @@
-package System.Position;
+package ArrangeSystem.Position;
 
-import System.TimeInterval;
+import ArrangeSystem.TimeInterval;
 
 
 public class Position {

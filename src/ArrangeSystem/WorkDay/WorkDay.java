@@ -1,7 +1,7 @@
-package System.WorkDay;
+package ArrangeSystem.WorkDay;
 
-import System.Position.Position;
-import System.Workers.Worker;
+import ArrangeSystem.Position.Position;
+import ArrangeSystem.Workers.Worker;
 
 import java.util.ArrayList;
 import java.util.HashMap;

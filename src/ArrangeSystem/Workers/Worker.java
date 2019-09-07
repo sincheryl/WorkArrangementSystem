@@ -1,6 +1,6 @@
-package System.Workers;
+package ArrangeSystem.Workers;
 
-import System.TimeInterval;
+import ArrangeSystem.TimeInterval;
 import java.util.Objects;
 
 public class Worker {

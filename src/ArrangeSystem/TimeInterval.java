@@ -1,4 +1,4 @@
-package System;
+package ArrangeSystem;
 
 public class TimeInterval {
 
@@ -28,8 +28,8 @@ public class TimeInterval {
 
     /**
      * This method determines if the a time interval is the sub interval of another
-     * @param intervalA a System.TimeInterval (available time of a worker)
-     * @param intervalB another System.TimeInterval (job time interval)
+     * @param intervalA a ArrangeSystem.TimeInterval (available time of a worker)
+     * @param intervalB another ArrangeSystem.TimeInterval (job time interval)
      * @return true if interval B is a sub interval of interval A, false otherwise
      */
     public static boolean compareIntervals(TimeInterval intervalA, TimeInterval intervalB) {

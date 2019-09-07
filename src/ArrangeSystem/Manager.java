@@ -1,8 +1,8 @@
-package System;
+package ArrangeSystem;
 
-import System.Position.Position;
-import System.WorkDay.WorkDay;
-import System.Workers.Worker;
+import ArrangeSystem.Position.Position;
+import ArrangeSystem.WorkDay.WorkDay;
+import ArrangeSystem.Workers.Worker;
 
 import java.util.ArrayList;
 import java.util.Collections;
