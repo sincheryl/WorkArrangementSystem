@@ -71,17 +71,12 @@ public class WorkDay {
         return positions;
     }
 
-    public void setPositions(ArrayList<Position> positions) {
-        this.positions = positions;
-    }
 
     public Map<Position, Worker> getArrangement() {
         return Arrangement;
     }
 
-    public void setArrangement(Map<Position, Worker> arrangement) {
-        Arrangement = arrangement;
-    }
+
 }
 
 

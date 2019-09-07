@@ -19,9 +19,10 @@ public class Position {
      */
     private String Colour;
 
-    public Position(TimeInterval time, String type) {
+    public Position(TimeInterval time, String type, String c) {
         Time = time;
         Type = type;
+        Colour = c;
     }
 
 

@@ -5,6 +5,8 @@ import System.WorkDay.WorkDay;
 import System.Workers.Worker;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class Manager {
     private ArrayList<WorkDay> week;
@@ -16,11 +18,12 @@ public class Manager {
      * @param start the start time of this position
      * @param end the end time of this position
      * @param type the type of this position
+     * @param c the colour of this position on the final table
      * @param when add this position to which of of this week
      */
-    public void setPositions(String start, String end, String type, WorkDay when){
+    public void setPositions(String start, String end, String type, String c,  WorkDay when){
         TimeInterval T = new TimeInterval(start, end);
-        Position p = new Position(T, type);
+        Position p = new Position(T, type, c);
         when.addPosition(p);
     }
 
@@ -47,22 +50,23 @@ public class Manager {
     }
 
     /**
-     * the method to get the available workers on the i-th of the week.
+     * the method to set the available workers on the i-th of the week.
      * @param i indicates which day of the week
-     * @return A collection of workers available on the i-th day of this week.
      */
-    public ArrayList<Worker> getAvaWorker(int i){
+    public void setAvaWorker(int i){
         ArrayList<Position> PS = week.get(i-1).getPositions();
-        for (Worker w : workers) {
+        ArrayList<Worker> all = new ArrayList<>(workers);
+        ArrayList<Worker> ava = new ArrayList<>();
+        for (Worker w : all) {
             TimeInterval T = w.getTimeAvailable()[i-1];
             for (Position p : PS){
                 if (TimeInterval.compareIntervals(T, p.getTime())){
-
-
+                    ava.add(w);
+                    all.remove(w);
                 }
             }
-
         }
-
+        Collections.shuffle(ava);
+        week.get(i-1).setWorkersToday(ava);
     }
 }
